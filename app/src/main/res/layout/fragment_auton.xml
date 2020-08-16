@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auton"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".TeleopScreen">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:id="@+id/textViewAutonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="AUTON"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/autoPowerStationView"
+        android:layout_width="542dp"
+        android:layout_height="438dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/a2020powerstationdarkmode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autonInitLineCheckbox"
+        app:layout_constraintVertical_bias="0.086">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/autoInnerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <TextView
+        android:id="@+id/autoOuterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoInnerView" />
+
+    <TextView
+        android:id="@+id/autoBottomView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="108dp"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoOuterView" />
+
+    <Button
+        android:id="@+id/autoInnerMinusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="-"
+        android:onClick="autonButtonCheck"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/autoInnerView"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoOuterMinusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="164dp"
+        android:text="-"
+        android:onClick="autonButtonCheck"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/autoOuterView"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoBottomMinusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="332dp"
+        android:text="-"
+        android:onClick="autonButtonCheck"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/autoBottomView"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoInnerPlusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="+"
+        android:onClick="autonButtonCheck"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/autoInnerView"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoBottomPlusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="332dp"
+        android:text="+"
+        android:onClick="autonButtonCheck"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/autoBottomView"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoOuterPlusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="164dp"
+        android:text="+"
+        android:onClick="autonButtonCheck"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/autoOuterView"
+        app:layout_constraintTop_toTopOf="@+id/autoPowerStationView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Balls Shot"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoShotMinusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="autonButtonCheck"
+        android:text="-"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/autoCollectedView"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoPowerStationView" />
+
+    <Button
+        android:id="@+id/autoShotPlusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="autonButtonCheck"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/autoCollectedView"
+        app:layout_constraintTop_toBottomOf="@+id/autoPowerStationView" />
+
+    <TextView
+        android:id="@+id/autoCollectedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoPowerStationView" />
+
+    <CheckBox
+        android:id="@+id/autonInitLineCheckbox"
+        android:layout_width="123dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="36dp"
+        android:onClick="autonCheckboxCheck"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="MOVED OUT OF INIT LINE?"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:buttonTint="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAutonTitle" />
+
+    <CheckBox
+        android:id="@+id/autonCollectCheckbox"
+        android:layout_width="127dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginTop="36dp"
+        android:onClick="autonCheckboxCheck"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="CAN THEY COLLECT IN AUTON?"
+        android:buttonTint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAutonTitle" />
+
+
+</android.support.constraint.ConstraintLayout>

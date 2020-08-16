@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".TeleopScreen">
+
+    <TextView
+        android:id="@+id/textViewEndgameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ENDGAME"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/buddyClimbCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:onClick="endgameCheckboxCheck"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:text="ABLE TO BUDDY CLIMB?"
+        android:textColor="@android:color/white"
+        android:buttonTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelCheckbox" />
+
+    <CheckBox
+        android:id="@+id/climbCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="25dp"
+        android:onClick="endgameCheckboxCheck"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:text="ABLE TO CLIMB?"
+        android:buttonTint="@android:color/white"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEndgameTitle" />
+
+    <CheckBox
+        android:id="@+id/levelCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="140dp"
+        android:onClick="endgameCheckboxCheck"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:text="ABLE TO LEVEL?"
+        android:buttonTint="@android:color/white"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/climbChronoMeter" />
+
+    <TextView
+        android:id="@+id/commentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="61dp"
+        android:text="Comments"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buddyClimbCheckbox" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="555dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentTextView">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/CommentBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/white" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/summaryNextButton"
+        android:layout_width="200dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginTop="8dp"
+        android:onClick="check"
+        android:text="to summary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.876" />
+
+    <Chronometer
+        android:id="@+id/climbChronoMeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="00.00"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/climbCheckbox" />
+
+    <Button
+        android:id="@+id/chronoStartStopBtn"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:onClick="endgameChronometerControl"
+        android:text="START"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/climbChronoMeter" />
+
+    <Button
+        android:id="@+id/chronoResetBtn"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:text="RESET"
+        android:textSize="24sp"
+        android:onClick="endgameChronometerControl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/climbChronoMeter" />
+
+</android.support.constraint.ConstraintLayout>
+
+
+
